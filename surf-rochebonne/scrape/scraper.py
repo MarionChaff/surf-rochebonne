@@ -6,11 +6,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.common.exceptions import TimeoutException
 
-# params
-from ..params import *
-
- # Number of observations to be collected from Windguru
-
 class Scraper:
 
     def __init__(self, url):
@@ -84,9 +79,12 @@ class Scraper:
         forecast_df = forecast_df.drop(columns=['gust_speed'])
         forecast_df[['wind_speed','swell_period']] = forecast_df[['wind_speed','swell_period']].astype(int)
 
+        print("✅ Surf forecasts scraped")
+
         return forecast_df
+
+from ..params import *
 
 if __name__ == '__main__':
     scraper = Scraper(WG_URL)
     forecast_df = scraper.scrape(NUM_PREV)
-    print(forecast_df)

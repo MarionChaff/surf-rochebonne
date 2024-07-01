@@ -1,0 +1,18 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.10.6, pytest-7.2.1, pluggy-1.0.0 -- /Users/brunolajoie/.pyenv/versions/3.10.6/envs/taxifare-source/bin/python3.10
+cachedir: .pytest_cache
+rootdir: /Users/brunolajoie/code/lewagon/taxi-fare/tests, configfile: pytest_kitt.ini
+plugins: asyncio-0.20.3, anyio-3.6.2
+asyncio: mode=strict
+collecting ... collected 8 items
+
+tests/train_at_scale/test_clean.py::test_clean_data PASSED               [ 12%]
+tests/train_at_scale/test_main_local.py::TestMainLocal::test_route_preprocess_and_train PASSED [ 25%]
+tests/train_at_scale/test_main_local.py::TestMainLocal::test_route_pred PASSED [ 37%]
+tests/train_at_scale/test_main_local.py::TestMainLocal::test_route_preprocess PASSED [ 50%]
+tests/train_at_scale/test_main_local.py::TestMainLocal::test_route_train PASSED [ 62%]
+tests/train_at_scale/test_model.py::test_model_can_fit PASSED            [ 75%]
+tests/train_at_scale/test_notebook.py::TestNotebook::test_y_pred PASSED  [ 87%]
+tests/train_at_scale/test_processor_pipeline.py::test_preprocess_features PASSED [100%]
+
+======================= 8 passed, 115 warnings in 36.58s =======================

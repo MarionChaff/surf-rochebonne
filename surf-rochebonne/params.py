@@ -1,5 +1,5 @@
-#import os
-#import numpy as np
+import os
+import pandas as pd
 
 ##################  VARIABLES  ##################
 
@@ -8,5 +8,5 @@ NUM_PREV = 100
 
 ##################  CONSTANTS  ##################
 
-LOCAL_DATA_PATH = ''
-EXEC_PATH = '/Users/marionchaffaut/chromedriver/chromedriver-mac-x64/chromedriver'
+LOCAL_DIRECTORY = ''
+DATASET_PATH = os.path.join('.', 'data', 'dataset_rochebonne.csv')
