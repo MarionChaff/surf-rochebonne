@@ -1,16 +1,18 @@
+# libraries
 import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-url = 'https://www.windguru.cz/112'
-exec_path = '/Users/marionchaffaut/chromedriver/chromedriver-mac-x64/chromedriver' # Put as ENV
-num_prev = 100 # Number of observations to be collected from Windguru
+# params
+from ..params import *
+
+ # Number of observations to be collected from Windguru
 
 class Scraper:
 
     def __init__(self, url):
         self.url = url
-        self.driver = webdriver.Chrome(executable_path=exec_path)
+        self.driver = webdriver.Chrome(executable_path=EXEC_PATH)
 
     def scrape(self, num_prev):
 
@@ -56,5 +58,6 @@ class Scraper:
         return forecast_df
 
 if __name__ == '__main__':
-    scraper = Scraper(url)
-    forecast_df = scraper.scrape(num_prev)
+    scraper = Scraper(WG_URL)
+    forecast_df = scraper.scrape(NUM_PREV)
+    print(forecast_df)
